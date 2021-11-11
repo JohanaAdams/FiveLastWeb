@@ -5,3 +5,9 @@ De Bogotá, residencia actual: Cota , Cundinamarca
 Curso Min Tic desarrollo de aplicaciones Web
 Equipo SixLastWeb
 Rol Desarrollador
+
+
+Nombre: Marly Johana Lopez 
+Rol: Product Owner
+Ciudad: Neiva
+Profesión: Docente 
