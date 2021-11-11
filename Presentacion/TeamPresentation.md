@@ -11,7 +11,7 @@ We are a team of enthusiastic programmers currently doing the 4rd cycle of Misio
 [Johana Lopez](https://github.com/JohanaLopez) is a Teacher from Neiva and her rol is Product Owner .\
 [Grace Chacon](https://github.com/GraceChacon) is an .... .\
 [Santiago Quintero](https://github.com/MrSanty) is an .\
-[Viviana Duque](https://github.com/) is an .\
+[Viviana Duque](https://github.com/vividuke) is an .\
 
 ## Tech
 To carry out this project we are using the following tools:
