@@ -6,10 +6,10 @@ We are a team of enthusiastic programmers currently doing the 4rd cycle of Misio
 - ✨Have fun!✨ 
 
 ## Our Team
-[Yerson Zubieta](https://github.com/yerson117) is an Industrial Engineer / Data Scientist / Bizagi Developer Analyst from Bogotá an his rol is DB Administrator.\
+[Yerson Zubieta](https://github.com/yerson117) is an Industrial Engineer / Data Scientist / Bizagi Developer Analyst from Bogotá and his rol is DB Administrator.\
 [Omar Gelves](https://github.com/omargelves) is a Bachelor of Electronics from Bogotá (currently lives in Cota, Cundinamarca) and his rol is Developer.\
 [Johana Lopez](https://github.com/JohanaLopez) is a Teacher from Neiva and her rol is Product Owner .\
-[Grace Chacon](https://github.com/GraceChacon) is an Systems Engineer from Bucaramanga and her rol is Analist .\
+[Grace Chacon](https://github.com/GraceChacon) is a Systems Engineer from Bucaramanga and her rol is Analyst .\
 [Santiago Quintero](https://github.com/MrSanty) is an .\
 [Viviana Duque](https://github.com/vividuke) is an.\
 ## Tech
