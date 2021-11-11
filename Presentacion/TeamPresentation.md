@@ -10,7 +10,7 @@ We are a team of enthusiastic programmers currently doing the 4rd cycle of Misio
 [Omar Gelves](https://github.com/omargelves) is a Bachelor of Electronics from Bogotá (currently lives in Cota, Cundinamarca) and his rol is Developer.\
 [Johana Lopez](https://github.com/JohanaLopez) is a Teacher from Neiva and her rol is Product Owner .\
 [Grace Chacon](https://github.com/GraceChacon) is a Systems Engineer from Bucaramanga and her rol is Analyst .\
-[Santiago Quintero](https://github.com/MrSanty) is an .\
+[Santiago Quintero](https://github.com/MrSanty) is a Systems Engineering student from Manizales and her rol is a developer.\
 [Viviana Duque](https://github.com/vividuke) is an.\
 ## Tech
 To carry out this project we are using the following tools:
