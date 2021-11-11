@@ -1,4 +1,4 @@
-# FiveLastWeb
+# SixLastWeb
 We are a team of enthusiastic programmers currently doing the 4rd cycle of MisionTIC2022. Some of our goals are:
 - 🏆Create an awesome project🏆
 - 🖥️Become full-stack programmers🖥️
