@@ -11,7 +11,7 @@ We are a team of enthusiastic programmers currently doing the 4rd cycle of Misio
 [Johana Lopez](https://github.com/JohanaLopez) is a Teacher from Neiva and her rol is Product Owner .\
 [Grace Chacon](https://github.com/GraceChacon) is a Systems Engineer from Bucaramanga and her rol is Analyst .\
 [Santiago Quintero](https://github.com/MrSanty) is a Systems Engineering student from Manizales and her rol is a developer.\
-[Viviana Duque](https://github.com/vividuke) is an.\
+[Viviana Duque](https://github.com/vividuke) is a QA system From Rionegro, Antioquia and  her rol is a Scrum Master.\
 ## Tech
 To carry out this project we are using the following tools:
 - HTML - HyperText Mark-up Language.
