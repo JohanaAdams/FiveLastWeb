@@ -1,5 +1,21 @@
 {
+  "name": "udea",
+  "version": "0.0.1",
+  "description": "Inicio proyecto ciclo 4a",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omargelves/EjercicioCiclo4-api.git"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "dependencies": {
-    "mongoose": "^6.0.14"
+    "aes256": "^1.1.0",
+    "apollo-server-express": "^3.5.0",
+    "express": "^4.17.1",
+    "graphql": "^15.7.2",
+    "mongoose": "^6.0.13",
+    "mongose": "^0.0.2-security"
   }
 }
