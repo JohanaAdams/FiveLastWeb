@@ -7,6 +7,7 @@ type Usuario{
     estado: String
     correo: String
     tipoUsuario: String
+    
 }
 type Proyecto{  
     lider: String
@@ -23,6 +24,7 @@ type Query{
 input UserInput{
     nombre: String
     identificacion:Int
+    correo: String
     clave:String
     tipoUsuario: String
 }

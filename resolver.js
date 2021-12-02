@@ -37,8 +37,7 @@ const resolvers = {
     Mutation: {
         createUser: (parent, args, context, info) => {
             const { clave } = args.user;
-            const nuevoUsuario = new User(args.user);
-            //const buffer = Buffer.from(plaintext);
+            const nuevoUsuario = new User(args.user);            
             const encryptedPlainText = aes256.encrypt(key, clave);
             nuevoUsuario.clave = encryptedPlainText
             return nuevoUsuario.save()
