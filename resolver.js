@@ -64,8 +64,9 @@ const resolvers = {
         insertUserToProject: async(parent, args, context, info) => {
             const user = await User.findOne({ identificacion: args.identificacion })
             if (user && user.estado === "Activo") {
-                const project = await Project.findOne({ nombre: args.nombreProyecto }) 
-                if (project && project.activo) {
+                const project = await Project.findOne({ nombre: args.nombreProyecto })
+                if (project && project.estado === "Activo") {
+                //if (project && project.activo) {
                     if (project.integrantes.find(i => i == user.identificacion)) {
                         return "El usuario ya pertenece al proyecto indicado"
                     } else {

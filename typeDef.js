@@ -5,12 +5,12 @@ type Usuario{
     nombre: String
     identificacion: Int
     estado: String
-    email: String
-    perfil: String
+    correo: String
+    tipoUsuario: String
 }
 type Proyecto{  
     lider: String
-    facultad: String
+    nombre: String
     
     
 }
@@ -24,7 +24,7 @@ input UserInput{
     nombre: String
     identificacion:Int
     clave:String
-    perfil: String
+    tipoUsuario: String
 }
 type Mutation{
     createUser(user:UserInput): String
