@@ -12,5 +12,5 @@ const usuario = new Schema({
     clave: { type: String, require: true }
 
 })
-module.exports = model('usuario', usuario)
+module.exports = model('usuarios', usuario, "usuarios")
 /*module.exports = model('usuario', usuario, 'usuario') para que no cree agregando la s al nombre de la coleccion*/
