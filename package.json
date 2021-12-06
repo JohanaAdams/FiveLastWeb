@@ -8,7 +8,8 @@
     "url": "https://github.com/omargelves/EjercicioCiclo4-api.git"
   },
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
   },
   "dependencies": {
     "aes256": "^1.1.0",
@@ -17,5 +18,8 @@
     "graphql": "^15.7.2",
     "mongoose": "^6.0.14",
     "mongose": "^0.0.2-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

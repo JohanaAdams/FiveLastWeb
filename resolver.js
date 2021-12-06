@@ -1,6 +1,12 @@
+const { addUserProject,
+    createProject,
+    deleteProject,
+    proyectos,
+    getProject } = require('./service/proyecto.service');
+const { buscarUsuarioPorIdentificacion} = require('./service/usuario.service')
 const Project = require('./model/proyectoModel')
 const User = require('./model/usuarioModel')
-var aes256 = require('aes256');
+let aes256 = require('aes256');
 
 const listUsuarios = [
     {
@@ -30,10 +36,11 @@ const key = 'CLAVEDIFICIL';
 const resolvers = {
     Query: {
         //usuarios: () => listUsuarios,
-        usuario: (parent, args, context, info) => listUsuarios.find(user => user.identificacion === args.identificacion),
         usuarios: async () => await User.find({}),
-        proyectos: async () => await Project.find({}).populate("integrantes"),
-        getProject: async (parent, args, context, info) => await Project.findOne({ nombre: args.nombre }),
+        usuario: (parent, args, context, info) => buscarUsuarioPorIdentificacion(args.identificacion),
+        
+        proyectos: async () => proyectos(),
+        getProject: async (parent, args, context, info) => getProject( args.nombre ),
     },
     Mutation: {
         createUser: (parent, args, context, info) => {
@@ -46,12 +53,7 @@ const resolvers = {
                 .catch(err => console.log(err));
             //.catch(err => "fallo la creacion");
         },
-        createProject: (parent, args, context, info) => {
-            const nuevoProyecto = new Project(args.project);
-            return nuevoProyecto.save()
-                .then(u => "Proyecto creado")
-                .catch(err => console.log(err));
-        },
+        
         activeUser: (parent, args, context, info) => {
             return User.updateOne({ identificacion: args.identificacion }, { estado: "Activo" })
                 .then(u => "Usuario Activo")
@@ -68,32 +70,22 @@ const resolvers = {
                 .then(u => "Usuario eliminado")
                 .catch(err => "Fallo la eliminacion");
         },
-        deleteProject: (parent, args, context, info) => {
-            return Project.updateOne({ nombre: args.nombreProyecto }, { activo: false })
-                .then(u => "Proyecto 'eliminado'")
-                .catch(err => "Fallo la eliminacion");
+        deleteProject: (parent, args, context, info) => deleteProject(args.nombreProyecto),          
+        
+        insertUserToProject: async (parent, args, context, info) => addUserProject(args.identificacion, args.nombreProyecto),
+        
+        createUser: (parent, args, context, info) => {
+            const { clave } = args.user;
+            const nuevoUsuario = new User(args.user);
+            const encryptedPlainText = aes256.encrypt(key, clave);
+            nuevoUsuario.clave = encryptedPlainText
+            return nuevoUsuario.save()
+                .then(u => "usuario creado")
+                .catch(err => console.log(err));
         },
-
-        insertUserToProject: async (parent, args, context, info) => {
-            const user = await User.findOne({ identificacion: args.identificacion })
-            if (user && user.estado === "Activo") {
-                const project = await Project.findOne({ nombre: args.nombreProyecto })
-                //if (project && project.estado === "Activo") {
-                if (project && project.activo) {
-                    if (project.integrantes.find(i => i == user._id)) {
-                        return "El usuario ya pertenece al proyecto indicado"
-                    } else {
-                        await Project.updateOne({ nombre: args.nombreProyecto }, { $push: { integrantes: user._id } })
-                        return "Usuario adicionado correctamente"
-                    }
-                } else {
-                    return "Proyecto no valido para adicionar un integrante, consulte al administrador"
-                }
-
-            } else {
-                return "Usuario no valido"
-            }
-        }
+        createProject: (parent, args, context, info) => createProject(args.project),                      
+        
+        
     }
 }
 module.exports = resolvers

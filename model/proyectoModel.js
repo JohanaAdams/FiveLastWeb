@@ -6,24 +6,27 @@ const project = new Schema({
         required: true,
         unique: true
     },
-    lider: String,
+    
     descripcion: String,
+    objetivosGenerales: String,
+    objetivosEspecificos: [String],
     presupuesto: Number,
     fechaInicio: {
         type: Date,
         default: new Date()
     },
-    estado: String,
-    fase: String,
-    objetivosGenerales: String,
-    activo: {
-        type: Boolean,
-        default: true
+    fecha_terminacion: Date,
+    estado: {
+        type: String,
+        default: "Activo"
     },
+    fase: String,
+    lider: String,
     integrantes:
         [{
-            ref: "usuarios",
-            type: Schema.Types.ObjectId
+            type: Schema.Types.ObjectId,
+            ref: "usuarios"
+            
         }]
 },
     /* {
