@@ -2,6 +2,7 @@
 require('./infraestructura/conectionDB')
 const typeDefs = require('./typeDef')
 const resolvers = require('./resolver')
+const authRoute = require('./routes/auth.routes')
 
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
@@ -14,10 +15,13 @@ const iniciarServidor =async () => {
             resolvers
         });
     await apollo.start()
-    apollo.applyMiddleware({ app: api })
-    api.use((request, response) => {
+    apollo.applyMiddleware({ app: api})
+    /*api.use((request, response) => {
         response.send('API GraphQL (SixLastWeb)')
-    })
+    })*/
+    api.use(express.json()) //para trabajar co json
+    api.use('/api', authRoute)
+    
     api.listen('9092',()=>console.log('Inicio server'))
 }
 iniciarServidor()
