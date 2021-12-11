@@ -1,6 +1,11 @@
 const { Schema, model } = require('mongoose')
 
 const project = new Schema({
+   /* identificador: {
+        type: String,
+        require: true,
+        unique:true
+    },*/
     nombre: {
         type: String,
         required: true,

@@ -14,7 +14,6 @@ type Proyecto{
     presupuesto:Int
     lider: String
     nombre: String
-
     descripcion:String
     estado:String
     fase:String
@@ -34,7 +33,6 @@ input UserInput{
     identificacion:Int
     clave:String
     tipoUsuario: String
-
     estado:String 
     correo: String
    
@@ -45,7 +43,6 @@ input ProjectInput{
         presupuesto: Int
         nombre:String
         lider: String
-
         descripcion: String       
         
         fase:String

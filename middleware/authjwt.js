@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const key = 'CLAVEDIFICIL';
+
 
 const validarToken = (request, response, next) => {
     const token = request.headers['authorization']

@@ -9,12 +9,26 @@ const authRoute = require('./routes/auth.routes')
 const express = require('express')
 const { ApolloServer } = require('apollo-server-express')
 
+const key = 'CLAVEDIFICIL';
 const iniciarServidor =async () => {
     const api = express();
     const apollo = new ApolloServer(
         {
             typeDefs,
-            resolvers
+            resolvers,
+            context: ({ req }) => {
+                const token = req.headers.authorization;
+                try {
+                    const perfil = jwt.verify(token, key)
+                    if (tipoUsuario) {
+                        rol = tipoUsuario.rol
+                        return { rol }
+                    }
+                } catch (error) {
+                    console.log(error)
+                }
+                return {}
+            }
         });
     await apollo.start()
     apollo.applyMiddleware({ app: api})
