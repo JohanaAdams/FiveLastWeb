@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-
+const key ='CLAVEDIFICIL'
 
 const validarToken = (request, response, next) => {
     const token = request.headers['authorization']
@@ -7,9 +7,9 @@ const validarToken = (request, response, next) => {
         return response.status(401).json({ response: "Token invalido" })
     }
     try {
-        const perfil = jwt.verify(token, key)
-        if (perfil) {
-            request.perfil = perfil.role
+        const tipoUsuario = jwt.verify(token, key)
+        if (tipoUsuario) {
+            request.tipoUsuario = tipoUsuario.rolesito
             next();
             return
         }
@@ -19,7 +19,7 @@ const validarToken = (request, response, next) => {
     }
 }
 const admin = (request, response, next) => {
-    if (request.perfil != "Admin") {
+    if (request.tipoUsuario != "Admin") {
         return response.status(403).json({ response: "Permisos insuficientes" })
     }
     next();
@@ -32,7 +32,7 @@ const isAdmin = (rol) => {
 }
 
 const estudiante = (request, response, next) => {
-    if (request.perfil != "Estudiante") {
+    if (request.tipoUsuario != "Estudiante") {
         return response.status(403).json({ response: "Permisos insuficientes" })
     }
     next();

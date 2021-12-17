@@ -23,7 +23,7 @@ const singIn = async (request, response) => {
             return response.status(401).json({ response: "Verique usuario y contrasena" })
         }
         const token = jwt.sign({
-            role: usuario.perfil
+            rolesito: usuario.tipoUsuario
         }, key, { expiresIn: 60 * 60 * 2 })
 
         response.status(200).json({ jwt: token })

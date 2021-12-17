@@ -1,7 +1,7 @@
 
 require('./infraestructura/conectionDB')
 const { validarToken,admin,estudiante} = require('./middleware/authjwt')
-
+const jwt = require('jsonwebtoken')
 const typeDefs = require('./typeDef')
 const resolvers = require('./resolver')
 const authRoute = require('./routes/auth.routes')
@@ -18,10 +18,10 @@ const iniciarServidor =async () => {
             resolvers,
             context: ({ req }) => {
                 const token = req.headers.authorization;
-                try {
-                    const perfil = jwt.verify(token, key)
+               try {
+                    const tipoUsuario = jwt.verify(token, key)
                     if (tipoUsuario) {
-                        rol = tipoUsuario.rol
+                        rol = tipoUsuario.rolesito
                         return { rol }
                     }
                 } catch (error) {

@@ -18,6 +18,7 @@ type Proyecto{
     estado:String
     fase:String
     integrantes:[Usuario]
+    _id:ID
     
     
 
@@ -48,6 +49,8 @@ input ProjectInput{
         fase:String
         
     }
+
+
 type Mutation{
     createUser(user:UserInput): String
     createProject(project:ProjectInput):String
@@ -55,6 +58,7 @@ type Mutation{
     deleteUser(ident:Int):String
     deleteProject(nombreProyecto:String):String
     insertUserToProject(identificacion:Int, nombreProyecto:String):String
+    autenticar(usuario:String, clave:String):String
 
     actualiceUser(identificacion:Int):String
 }
