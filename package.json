@@ -8,9 +8,12 @@
     "url": "https://github.com/omargelves/EjercicioCiclo4-api.git"
   },
   "scripts": {
-    "start": "node ./index.js",
-    "dev": "nodemon ./index.js"
-  },
+    "start": "node ./index.js"
+    
+    },
+    "engines": {
+      "node": "14.x"
+    },
   "dependencies": {
     "aes256": "^1.1.0",
     "apollo-server-express": "^3.5.0",
